@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4u6my6jek8tp"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_kawe8"]
+[ext_resource type="Texture2D" uid="uid://bdujhw7u7uk54" path="res://assets/bg/d8f083e2-d686-418e-9050-0a2adb5206e0.jpg" id="2_6cr48"]
+[ext_resource type="Texture2D" uid="uid://t03j7bxh8x8u" path="res://assets/bg/Hearts_Blue_1.png" id="3_i2ugy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akdus"]
+bg_color = Color(0.140391, 0.358258, 0.631669, 1)
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kawe8")
+
+[node name="Forest-birds-house-tale-wallpaper-49023d7979Ab0e3Bec0Cef3c0d4c741d" type="Sprite2D" parent="."]
+position = Vector2(577.5, 327)
+scale = Vector2(0.900781, 1.17902)
+texture = ExtResource("2_6cr48")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_akdus")
+text = "MAGLARO KANA BAKS"
+icon = ExtResource("3_i2ugy")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

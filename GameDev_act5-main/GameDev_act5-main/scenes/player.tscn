@@ -1,0 +1,153 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqnaqj8yb6hwd"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ofpvf"]
+[ext_resource type="Texture2D" uid="uid://gl1ueawgsaft" path="res://assets/elsa2.png" id="2_os8kx"]
+[ext_resource type="Texture2D" uid="uid://t03j7bxh8x8u" path="res://assets/bg/Hearts_Blue_1.png" id="3_garps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwimb"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(0, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2erfx"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(33, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej8fd"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(66, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u74p"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(99, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfcye"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(0, 0, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6irfw"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(33, 0, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e31d"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(66, 0, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uv4j"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(99, 0, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qilww"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(0, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpccr"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(33, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8caw"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(66, 96, 33, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyxbn"]
+atlas = ExtResource("2_os8kx")
+region = Rect2(99, 96, 33, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81gkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwimb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2erfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej8fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u74p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfcye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6irfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e31d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uv4j")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qilww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpccr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8caw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyxbn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e1vq6"]
+radius = 4.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_ofpvf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -6)
+scale = Vector2(0.642857, 0.642857)
+sprite_frames = SubResource("SpriteFrames_81gkq")
+animation = &"run"
+frame_progress = 0.922065
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -9)
+shape = SubResource("CapsuleShape2D_e1vq6")
+
+[node name="HeartsBlue1" type="Sprite2D" parent="."]
+position = Vector2(-14, -22)
+scale = Vector2(0.151042, 0.151042)
+texture = ExtResource("3_garps")
+
+[node name="HeartsBlue2" type="Sprite2D" parent="."]
+position = Vector2(-7, -22)
+scale = Vector2(0.151042, 0.151042)
+texture = ExtResource("3_garps")
+
+[node name="HeartsBlue3" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+scale = Vector2(0.151042, 0.151042)
+texture = ExtResource("3_garps")
+
+[node name="HeartsBlue4" type="Sprite2D" parent="."]
+position = Vector2(7, -22)
+scale = Vector2(0.151042, 0.151042)
+texture = ExtResource("3_garps")
+
+[node name="HeartsBlue5" type="Sprite2D" parent="."]
+position = Vector2(14, -22)
+scale = Vector2(0.151042, 0.151042)
+texture = ExtResource("3_garps")

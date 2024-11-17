@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4kg150o2entl"]
+
+[ext_resource type="AudioStream" uid="uid://csbm566ktbcmo" path="res://assets/music/Disney's Frozen Let It Go Sequence Performed by Idina Menzel.mp3" id="1_hijke"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_hijke")
+volume_db = 14.39
+autoplay = true
+bus = &"Music"
+parameters/looping = true
